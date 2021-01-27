@@ -35,5 +35,34 @@ namespace TestARO2.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet("{id}", Name = "GetById")]
+        public WeatherForecast GetById(int id)
+        {
+            var rng = new Random();
+            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            {
+                Date = DateTime.Now.AddDays(index),
+                TemperatureC = rng.Next(-20, 55),
+                Summary = Summaries[rng.Next(Summaries.Length)]
+            })
+            .ToArray().First();
+        }
+
+        [HttpPost]
+        public ActionResult Post(WeatherForecast ws)
+        {
+            return Ok();
+        }
+        [HttpPut]
+        public ActionResult Put(WeatherForecast ws)
+        {
+            return Ok();
+        }
+        [HttpDelete]
+        public ActionResult Delete(int id)
+        {
+            return Ok();
+        }
     }
 }

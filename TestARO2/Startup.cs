@@ -28,7 +28,7 @@ namespace TestARO2
         {
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "tst API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "test API", Version = "v1" });
             });
 
             services.AddControllers();
@@ -46,7 +46,7 @@ namespace TestARO2
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "tst API - desa");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "test API - desa");
             });
 
             app.UseHttpsRedirection();
